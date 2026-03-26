@@ -100,27 +100,30 @@ export default function CardNav() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="w-full md:hidden flex flex-col px-2 pt-4 pb-2 border-t border-slate-100 mt-2 gap-1"
+              className="w-full md:hidden overflow-hidden"
             >
-              {filteredNavItems.map(item => (
-                <Link 
-                  key={item.path} 
-                  to={item.path} 
-                  className={`flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${location.pathname === item.path ? 'bg-[#0f4c81]/10 text-[#0f4c81] scale-[0.98]' : 'text-slate-600 hover:bg-slate-50'}`}
-                >
-                  <item.icon className={`w-5 h-5 ${location.pathname === item.path ? 'text-[#0f4c81]' : 'text-slate-400'}`} />
-                  <span className="font-semibold">{item.label}</span>
-                </Link>
-              ))}
-              {isLoggedIn && (
-                <button 
-                  onClick={() => { localStorage.removeItem('isLoggedIn'); window.location.href='/'; }} 
-                  className="flex items-center gap-3 px-4 py-3 rounded-2xl transition-colors text-red-500 hover:bg-red-50 mt-1"
-                >
-                  <LogOut className="w-5 h-5" />
-                  <span className="font-semibold">Logout</span>
-                </button>
-              )}
+              <div className="flex flex-col px-2 pt-3 pb-2 border-t border-slate-100 mt-2 gap-1 min-w-[250px] whitespace-nowrap">
+                {filteredNavItems.map(item => (
+                  <Link 
+                    key={item.path} 
+                    to={item.path} 
+                    onClick={() => setIsExpanded(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${location.pathname === item.path ? 'bg-[#0f4c81]/10 text-[#0f4c81] scale-[0.98]' : 'text-slate-600 hover:bg-slate-50'}`}
+                  >
+                    <item.icon className={`w-5 h-5 ${location.pathname === item.path ? 'text-[#0f4c81]' : 'text-slate-400'}`} />
+                    <span className="font-semibold">{item.label}</span>
+                  </Link>
+                ))}
+                {isLoggedIn && (
+                  <button 
+                    onClick={() => { localStorage.removeItem('isLoggedIn'); window.location.href='/'; }} 
+                    className="flex items-center gap-3 px-4 py-3 rounded-2xl transition-colors text-red-500 hover:bg-red-50 mt-1 w-full text-left"
+                  >
+                    <LogOut className="w-5 h-5" />
+                    <span className="font-semibold">Logout</span>
+                  </button>
+                )}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
