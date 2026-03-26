@@ -1,0 +1,18 @@
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.spotlight-effect {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
