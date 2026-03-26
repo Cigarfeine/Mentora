@@ -31,7 +31,8 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <Router>
+    // @ts-expect-error vite injects import.meta.env
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="fixed inset-0 z-[-1] bg-slate-50"></div>
       <AnimatedRoutes />
     </Router>
