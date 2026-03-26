@@ -55,6 +55,9 @@ export const LIVE_SESSIONS: LiveSession[] = [
   }
 ];
 
+// @ts-expect-error vite injects import.meta.env
+const BASE = import.meta.env.BASE_URL;
+
 export const MENTORS: Mentor[] = [
   {
     id: '1',
@@ -62,7 +65,7 @@ export const MENTORS: Mentor[] = [
     university: 'MBITS',
     rating: 4.8,
     subject: 'Programming',
-    avatar: '/mentors/Don joy.jpeg'
+    avatar: `${BASE}mentors/Don joy.jpeg`
   },
   {
     id: '2',
@@ -70,7 +73,7 @@ export const MENTORS: Mentor[] = [
     university: 'MBITS',
     rating: 4.9,
     subject: 'Engineering Maths',
-    avatar: '/mentors/Igno JOJO.jpeg'
+    avatar: `${BASE}mentors/Igno JOJO.jpeg`
   },
   {
     id: '3',
@@ -78,7 +81,7 @@ export const MENTORS: Mentor[] = [
     university: 'MBITS',
     rating: 4.7,
     subject: 'Data Structures',
-    avatar: '/mentors/Zayan.JPG'
+    avatar: `${BASE}mentors/Zayan.JPG`
   }
 ];
 
@@ -87,7 +90,7 @@ export const COMMUNITY_POSTS: CommunityPost[] = [
     id: '1',
     author: 'Don joy',
     university: 'MBITS',
-    avatar: '/mentors/Don joy.jpeg',
+    avatar: `${BASE}mentors/Don joy.jpeg`,
     title: 'Study Materials for Engineering Maths',
     content: 'Where are materials study materials designed cross study materials?',
     likes: 150,
@@ -99,7 +102,7 @@ export const COMMUNITY_POSTS: CommunityPost[] = [
     id: '2',
     author: 'Igno JOJO',
     university: 'MBITS',
-    avatar: '/mentors/Igno JOJO.jpeg',
+    avatar: `${BASE}mentors/Igno JOJO.jpeg`,
     content: 'How to solve this differential equation? dy/dx + y = e^x',
     likes: 45,
     comments: 12,

@@ -4,13 +4,16 @@ import ShinyText from '../components/ShinyText';
 import BlurText from '../components/BlurText';
 import ProfileCard from '../components/ProfileCard';
 
+// @ts-expect-error vite injects import.meta.env
+const BASE = import.meta.env.BASE_URL;
+
 const TEAM_MEMBERS = [
-  { name: 'Muhammad Sinan', role: 'Chief Executive Officer', image: '/members/Muhammad Sinan.jpeg' },
-  { name: 'Joe mani', role: 'Co-Founder', image: '/members/Joe mani.jpeg' },
-  { name: 'Mathew Joseph', role: 'Tech Lead', image: '/members/Mathew Joseph.jpeg' },
-  { name: 'Kezia sarah', role: 'Design Lead', image: '/members/Kezia sarah.jpeg' },
-  { name: 'Mathson Biju', role: 'Community Manager', image: '/members/Mathson Biju.jpeg' },
-  { name: 'Muhammed Azad CB', role: 'Operations Head', image: '/members/Muhammed Azad CB.jpeg' },
+  { name: 'Muhammad Sinan', role: 'Chief Executive Officer', image: `${BASE}members/Muhammad Sinan.jpeg` },
+  { name: 'Joe mani', role: 'Co-Founder', image: `${BASE}members/Joe mani.jpeg` },
+  { name: 'Mathew Joseph', role: 'Tech Lead', image: `${BASE}members/Mathew Joseph.jpeg` },
+  { name: 'Kezia sarah', role: 'Design Lead', image: `${BASE}members/Kezia sarah.jpeg` },
+  { name: 'Mathson Biju', role: 'Community Manager', image: `${BASE}members/Mathson Biju.jpeg` },
+  { name: 'Muhammed Azad CB', role: 'Operations Head', image: `${BASE}members/Muhammed Azad CB.jpeg` },
 ];
 
 export default function About() {
