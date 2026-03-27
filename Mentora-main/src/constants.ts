@@ -1,10 +1,10 @@
 import { Subject, LiveSession, Mentor, CommunityPost } from './types';
 
 export const SUBJECTS: Subject[] = [
-  { id: 'math', name: 'Engineering Maths', icon: 'Calculator', color: 'bg-blue-50 text-blue-600' },
-  { id: 'programming', name: 'Programming', icon: 'Code', color: 'bg-indigo-50 text-indigo-600' },
-  { id: 'data', name: 'Data Structures', icon: 'Database', color: 'bg-purple-50 text-purple-600' },
-  { id: 'python', name: 'Python for Engineers', icon: 'Terminal', color: 'bg-emerald-50 text-emerald-600' },
+  { id: 'math', name: 'Engineering Maths', icon: 'Calculator', code: 'EST 130', color: 'bg-blue-50 text-blue-600' },
+  { id: 'programming', name: 'Programming', icon: 'Code', code: 'EST 102', color: 'bg-indigo-50 text-indigo-600' },
+  { id: 'data', name: 'Data Structures', icon: 'Database', code: 'CST 201', color: 'bg-purple-50 text-purple-600' },
+  { id: 'python', name: 'Python for Engineers', icon: 'Terminal', code: 'EST 104', color: 'bg-emerald-50 text-emerald-600' },
 ];
 
 export const LIVE_SESSIONS: LiveSession[] = [

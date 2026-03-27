@@ -13,7 +13,8 @@ export default function ProfileCard({ name, role, image, delay = 0 }: ProfileCar
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
       className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-shadow cursor-pointer"
     >
